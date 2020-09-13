@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="py-5 text-center">
+          <img class="d-block mx-auto mb-4" src="static/logo.jpg" alt="">
+          <h2>Catia Variedades - Romaneio</h2>
+          <p class="lead">Copie a planilha anexada no email da WISH. Cole no campo abaixo e escolha a Opção desejada "Gerar Romaneio" ou "Impressão de Etiquetas"</p>
+        </div>
+        <div class="py-5 text-center">
+        <form action="{{ url_for('relatorio') }}" method="post">
+            <textarea name="relatorio" rows="6" cols="120"></textarea>
+            <input type="submit" class="btn btn-lg btn-primary" style="margin-bottom: 150px;" value="Gerar Romaneio">
+        </form>
+        <form action="{{ url_for('etiquetas') }}" method="post">
+            <textarea name="etiquetas" rows="6" cols="120"></textarea>
+            <input type="submit" class="btn btn-lg btn-primary" style="margin-bottom: 150px;" value="Imprimir Etiquetas">
+        </form>
+        
+        </div>
+</body>
+</html>
