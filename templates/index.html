@@ -14,13 +14,13 @@
           <p class="lead">Copie a planilha anexada no email da WISH. Cole no campo abaixo e escolha a Opção desejada "Gerar Romaneio" ou "Impressão de Etiquetas"</p>
         </div>
         <div class="py-5 text-center">
-        <form action="{{ url_for('relatorio') }}" method="post">
-            <textarea name="relatorio" rows="6" cols="120"></textarea>
-            <input type="submit" class="btn btn-lg btn-primary" style="margin-bottom: 150px;" value="Gerar Romaneio">
+        <form action="{{ url_for('imprimeRomaneio') }}" method="post">
+            <textarea name="romaneio" rows="6" cols="120"></textarea>
+            <input type="submit" class="btn btn-lg btn-primary" style="margin-bottom: 150px;" value="Imprime Romaneio">
         </form>
-        <form action="{{ url_for('etiquetas') }}" method="post">
+        <form action="{{ url_for('imprimeEtiquetas') }}" method="post">
             <textarea name="etiquetas" rows="6" cols="120"></textarea>
-            <input type="submit" class="btn btn-lg btn-primary" style="margin-bottom: 150px;" value="Imprimir Etiquetas">
+            <input type="submit" class="btn btn-lg btn-primary" style="margin-bottom: 150px;" value="Imprime Etiquetas">
         </form>
         
         </div>

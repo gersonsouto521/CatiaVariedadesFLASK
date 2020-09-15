@@ -14,19 +14,36 @@
 
 <div class="container">
   {% for x in range(0,tamanho,2) %}
-  {% if x !=0 and  x//2 % 4 == 0 %}
+  {% if x !=0 and  x//2 % 4 == 0 and tamanho > x+1 %}
   <div class="row break">
     <div class="col-sm p-2">
       <div class="card border border-dark pl-2" style="width: 30rem;">
         <img class="card-img-top" src="static/etiqueta.PNG" height="170" alt="Generic placeholder image">
-        <h2 class="card-title px-md-5">{{df.at[x,'Customer Name']}}</h2>
+        <h4 class="card-title px-md-5">{{df.at[x,'Customer Name'][0:33]}}</h4>
         <p class="card-text ">Estamos muito animados por ter ajudado você.<br>Obrigado pela sua compra!<br>Deixe-nos saber como foi a sua entrega, entre em contato com<br>support@wish.com</p>			
       </div>
     </div>
     <div class="col-sm p-2">
       <div class="card border border-dark pl-2" style="width: 30rem;">
         <img class="card-img-top" src="static/etiqueta.PNG" height="170" alt="Generic placeholder image">
-        <h2 class="card-title px-md-5">{{df.at[x+1,'Customer Name']}}</h2>
+        <h4 class="card-title px-md-5">{{df.at[x+1,'Customer Name'][0:33]}}</h4>
+        <p class="card-text ">Estamos muito animados por ter ajudado você.<br>Obrigado pela sua compra!<br>Deixe-nos saber como foi a sua entrega, entre em contato com<br>support@wish.com</p>			
+      </div>
+    </div>
+  </div>
+  {% elif tamanho > x+1 %}
+  <div class="row">
+    <div class="col-sm p-2">
+      <div class="card border border-dark pl-2" style="width: 30rem;">
+        <img class="card-img-top" src="static/etiqueta.PNG" height="170" alt="Generic placeholder image">
+        <h4 class="card-title px-md-5">{{df.at[x,'Customer Name'][0:33]}}</h4>
+        <p class="card-text ">Estamos muito animados por ter ajudado você.<br>Obrigado pela sua compra!<br>Deixe-nos saber como foi a sua entrega, entre em contato com<br>support@wish.com</p>			
+      </div>
+    </div>
+    <div class="col-sm p-2">
+      <div class="card border border-dark pl-2" style="width: 30rem;">
+        <img class="card-img-top" src="static/etiqueta.PNG" height="170" alt="Generic placeholder image">
+        <h4 class="card-title px-md-5">{{df.at[x+1,'Customer Name'][0:33]}}</h4>
         <p class="card-text ">Estamos muito animados por ter ajudado você.<br>Obrigado pela sua compra!<br>Deixe-nos saber como foi a sua entrega, entre em contato com<br>support@wish.com</p>			
       </div>
     </div>
@@ -36,14 +53,7 @@
     <div class="col-sm p-2">
       <div class="card border border-dark pl-2" style="width: 30rem;">
         <img class="card-img-top" src="static/etiqueta.PNG" height="170" alt="Generic placeholder image">
-        <h2 class="card-title px-md-5">{{df.at[x,'Customer Name']}}</h2>
-        <p class="card-text ">Estamos muito animados por ter ajudado você.<br>Obrigado pela sua compra!<br>Deixe-nos saber como foi a sua entrega, entre em contato com<br>support@wish.com</p>			
-      </div>
-    </div>
-    <div class="col-sm p-2">
-      <div class="card border border-dark pl-2" style="width: 30rem;">
-        <img class="card-img-top" src="static/etiqueta.PNG" height="170" alt="Generic placeholder image">
-        <h2 class="card-title px-md-5">{{df.at[x+1,'Customer Name']}}</h2>
+        <h4 class="card-title px-md-5">{{df.at[x,'Customer Name'][0:33]}}</h4>
         <p class="card-text ">Estamos muito animados por ter ajudado você.<br>Obrigado pela sua compra!<br>Deixe-nos saber como foi a sua entrega, entre em contato com<br>support@wish.com</p>			
       </div>
     </div>
