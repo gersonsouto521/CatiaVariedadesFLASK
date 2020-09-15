@@ -11,20 +11,20 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/relatorio', methods=['POST'])
+@app.route('/romaneio', methods=['POST'])
 def imprimeRomaneio(): 
-        planilhaWishLocal = request.form['relatorio']
+        planilhaWishLocal = request.form['romaneio']
         if planilhaWishLocal[0:5] == 'Order':
             dados = StringIO(str(planilhaWishLocal))
             dataFrame = pd.read_csv(dados, sep="	")
             tamanhoDados = len(dataFrame)
-            return render_template('relatorio.html',df=dataFrame,tamanho=tamanhoDados)
+            return render_template('romaneio.html',df=dataFrame,tamanho=tamanhoDados)
         else:
             addCabecalho = ('Order Sent Date	Order ID	Customer Name	Address	Phone	Product Name	SKU	Quantity	Package ID	Package Identifer\n'+planilhaWishLocal)
             dados = StringIO(str(addCabecalho))
             dataFrame = pd.read_csv(dados, sep="	")
             tamanhoDados = len(dataFrame)
-            return render_template('relatorio.html',df=dataFrame,tamanho=tamanhoDados)
+            return render_template('romaneio.html',df=dataFrame,tamanho=tamanhoDados)
 
 
 @app.route('/etiquetas', methods=['POST'])
